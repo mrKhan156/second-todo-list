@@ -21,8 +21,27 @@ let createTask = function(task){
 
   let checkBox = document.createElement('input');
   let label =  document.createElement('label');
- let update = document.createElement('button')
+ let update = document.createElement('button');
   label.innerText = task;
+  update.addEventListener('click', function(e){
+    const li = this.parentElement;
+    const label = li.querySelector('label');
+    const task = label.textContent;
+    const newInput = document.createElement('input');
+    newInput.value= task;
+    label.innerHTML = '';
+    label.appendChild(newInput);
+    update.hidden = true;
+    newInput.addEventListener('keypress', function(e){
+      if(e.key=== "Enter"){
+        const newTaskName = this.value;
+        label.innerHTML = '';
+        label.textContent = newTaskName ;
+        update.hidden = false;
+      }
+    })
+
+  })
   checkBox.type = 'checkbox';
  update.innerText ='update';
  update.className = 'update';

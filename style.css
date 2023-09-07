@@ -80,6 +80,7 @@
     color: white;
     border: 0px;
     padding: 3px 5px;
+    cursor: pointer;
   }
   .new{
     background-color: yellow;
@@ -94,4 +95,11 @@
     padding: 3px 5px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
